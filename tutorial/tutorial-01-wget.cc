@@ -75,6 +75,7 @@ void wget_callback(WFHttpTask *task)
 	resp->get_parsed_body(&body, &body_len);
 	fwrite(body, 1, body_len, stdout);
 	fflush(stdout);
+	fprintf(stderr, "\n[Learning] Response body bytes: %zu\n", body_len);
 
 	fprintf(stderr, "\nSuccess. Press Ctrl-C to exit.\n");
 }
@@ -109,7 +110,7 @@ int main(int argc, char *argv[])
 										   wget_callback);
 	protocol::HttpRequest *req = task->get_req();
 	req->add_header_pair("Accept", "*/*");
-	req->add_header_pair("User-Agent", "Wget/1.14 (linux-gnu)");
+	req->add_header_pair("User-Agent", "WorkflowBeginner/0.1");
 	req->add_header_pair("Connection", "close");
 	task->start();
 

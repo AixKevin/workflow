@@ -47,3 +47,70 @@ workflow-config.cmake
 .xmake
 build.xmake
 _include
+
+# Build directories and CMake artifacts
+build/
+build.cmake/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Common binary/output files
+bin/
+*.elf
+*.bin
+*.so.*
+
+# Coverage and profiling
+*.gcno
+*.gcda
+coverage/
+
+# Temporary and editor files
+*.log
+*.tmp
+*.bak
+*~
+
+# Ignore built executables at tutorial root, but keep source and directories
+/tutorial/build.cmake/
+/tutorial/*
+!/tutorial/*/
+!/tutorial/*.cc
+!/tutorial/CMakeLists.txt
+!/tutorial/GNUmakefile
+!/tutorial/xmake.lua
+
+# Ignore CMake and build artifacts anywhere under tutorial
+/tutorial/**/CMakeFiles/
+/tutorial/**/cmake_install.cmake
+/tutorial/**/CMakeCache.txt
+/tutorial/**/Makefile
+/tutorial/**/cmake-build-debug/
+/tutorial/**/build/
+/tutorial/**/CTestTestfile.cmake
+/tutorial/**/CTestTestfile.cmake
+
+# Ignore common compiled objects and binaries under tutorial
+/tutorial/**/*.o
+/tutorial/**/*.obj
+/tutorial/**/*.a
+/tutorial/**/*.so
+/tutorial/**/*.so.*
+/tutorial/**/*.dylib
+/tutorial/**/*.dll
+/tutorial/**/*.exe
+/tutorial/**/*.out
+/tutorial/**/*.elf
+/tutorial/**/*.bin
+
+# Ignore coverage/profiler outputs in tutorial
+/tutorial/**/*.gcno
+/tutorial/**/*.gcda
+
+# Ignore temporary/editor files in tutorial
+/tutorial/**/*.log
+/tutorial/**/*.tmp
+/tutorial/**/*.bak
+/tutorial/**/*~
